@@ -1,0 +1,77 @@
+<section class="mkc-dialog-content">
+    {{!-- Monster Info --}}
+    <div class="form-group mkc-monster-info">
+        <label>{{localize "MKC.Dialog.Monster"}}</label>
+        <div class="form-fields">
+            <span class="mkc-monster-name">{{monster.name}}</span>
+        </div>
+    </div>
+
+    {{!-- Character Selection --}}
+    <div class="form-group mkc-player-info">
+        <label>{{localize "MKC.Dialog.Character"}}</label>
+        <div class="form-fields">
+            <select name="character" class="mkc-character-select">
+                {{#each characters}}
+                <option value="{{this.id}}" {{#if this.selected}}selected{{/if}}>
+                    {{this.name}}
+                </option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+
+    <hr>
+
+    {{!-- Background Knowledge Selection --}}
+    <div class="form-group">
+        <label>{{localize "MKC.Dialog.BackgroundKnowledge"}}</label>
+        <div class="form-fields">
+            <select name="autopass" class="mkc-autopass-select">
+                <option value="">{{localize "MKC.Dialog.BackgroundKnowledgeNone"}}</option>
+                <option value="tier1">{{localize "MKC.Tier.I"}} (DC {{dcs.tier1}})</option>
+                <option value="tier2">{{localize "MKC.Tier.II"}} (DC {{dcs.tier2}})</option>
+                <option value="tier3">{{localize "MKC.Tier.III"}} (DC {{dcs.tier3}})</option>
+                <option value="tier4">{{localize "MKC.Tier.IV"}} (DC {{dcs.tier4}})</option>
+                {{#if tier5Configured}}
+                <option value="tier5">{{localize "MKC.Tier.V"}} (DC {{dcs.tier5}})</option>
+                {{/if}}
+            </select>
+        </div>
+        <p class="hint">{{localize "MKC.Dialog.BackgroundKnowledgeHint"}}</p>
+    </div>
+
+    <hr>
+
+    {{!-- Skill Selection --}}
+    <div class="form-group">
+        <label>{{localize "MKC.Dialog.SelectSkill"}}</label>
+        <div class="form-fields">
+            <select name="skill" class="mkc-skill-select">
+                {{#each skills}}
+                <option value="{{this.id}}">
+                    {{this.label}} ({{this.modifierDisplay}})
+                </option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+
+    {{!-- Advantage Checkbox --}}
+    <div class="form-group">
+        <label>{{localize "MKC.Dialog.Advantage"}}</label>
+        <div class="form-fields">
+            <input type="checkbox" name="advantage" class="mkc-advantage-checkbox">
+        </div>
+    </div>
+
+    {{!-- DC Modifier --}}
+    <div class="form-group">
+        <label>{{localize "MKC.Dialog.DCModifier"}}</label>
+        <div class="form-fields">
+            <input type="number" name="dcModifier" value="0" class="mkc-dc-modifier" 
+                   placeholder="0" step="1">
+        </div>
+        <p class="hint">{{localize "MKC.Dialog.DCModifierHint"}}</p>
+    </div>
+</section>

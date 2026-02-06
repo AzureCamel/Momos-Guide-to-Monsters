@@ -1,0 +1,95 @@
+<div class="mkc-chat-result dnd5e2 chat-card" data-monster-id="{{monster.id}}" data-monster-name="{{monster.name}}">
+    {{!-- Header --}}
+    <header class="card-header">
+        <img src="icons/svg/book.svg" alt="Knowledge Check" class="gold-icon">
+        <h3 class="item-name">{{localize "MKC.Chat.Title"}}</h3>
+    </header>
+
+    {{!-- Content --}}
+    <div class="card-content">
+        <p class="mkc-roll-info">
+            <strong>{{player.name}}</strong> 
+            {{#if isAutopass}}
+                {{localize "MKC.Chat.AutomaticallyRecalled"}}
+            {{else}}
+                {{localize "MKC.Chat.TriedToRecall"}}
+            {{/if}}
+            <strong>{{monster.name}}</strong>
+            {{#unless isAutopass}}
+                {{localize "MKC.Chat.Using"}}
+                <strong>{{skill.label}}</strong>
+                {{#if advantage}}
+                    <em>({{localize "MKC.Chat.WithAdvantage"}})</em>
+                {{/if}}
+            {{/unless}}
+        </p>
+
+        {{!-- Roll Result --}}
+        {{#if roll}}
+        <div class="mkc-roll-result">
+            <span class="mkc-roll-total">{{localize "MKC.Chat.RollResult"}}: <strong>{{roll.total}}</strong></span>
+            <span class="mkc-roll-formula">({{roll.formula}})</span>
+        </div>
+        {{/if}}
+
+        {{!-- Background Knowledge indicator --}}
+        {{#if isAutopass}}
+        <div class="mkc-autopass-indicator">
+            <i class="fas fa-check-circle"></i> {{localize "MKC.Chat.BackgroundKnowledge"}}: {{autopassLevelLabel}}
+        </div>
+        {{/if}}
+
+        {{#if dcModifier}}
+        <p class="mkc-dc-modifier-info">
+            <em>{{localize "MKC.Chat.DCModifier"}}: {{#if (gt dcModifier 0)}}+{{/if}}{{dcModifier}}</em>
+        </p>
+        {{/if}}
+
+        <hr>
+
+        {{!-- Knowledge Gained --}}
+        {{#if hasKnowledge}}
+        <div class="mkc-knowledge-gained">
+            <h4>{{localize "MKC.Chat.KnowledgeGained"}}</h4>
+
+            {{#each tiers}}
+            <div class="mkc-knowledge-section mkc-tier-{{this.level}}">
+                <h5><i class="{{this.icon}}"></i> {{this.label}}</h5>
+                
+                {{#each this.info}}
+                    {{#if this.items}}
+                        {{!-- Array-based info (like condition immunities, damage types) --}}
+                        <p>
+                            <strong>{{this.label}}:</strong>
+                            {{#if this.items.length}}
+                                {{#each this.items}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
+                            {{else}}
+                                <em>{{this.emptyText}}</em>
+                            {{/if}}
+                        </p>
+                    {{else}}
+                        {{!-- Simple value info --}}
+                        <p>
+                            <strong>{{this.label}}:</strong>
+                            {{this.value}}{{#if this.formula}} ({{this.formula}}){{/if}}
+                        </p>
+                    {{/if}}
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+
+        {{!-- GM Bestiary Button (visibility controlled by JS based on viewer) --}}
+        <div class="mkc-bestiary-button-container" style="display: none;">
+            <button type="button" class="mkc-add-to-bestiary">
+                <i class="fas fa-book-medical"></i> {{localize "MKC.Chat.AddToBestiary"}}
+            </button>
+        </div>
+
+        {{else}}
+        <div class="mkc-no-knowledge">
+            <p><em>{{localize "MKC.Chat.NoKnowledge"}}</em></p>
+        </div>
+        {{/if}}
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="mkc-tier-config-content">
+    <p class="notes">{{localize "MKC.Settings.TierConfig.Description"}}</p>
+    
+    {{#each tiers}}
+    <fieldset class="mkc-tier-fieldset {{#if this.isOptional}}mkc-optional-tier{{/if}}">
+        <legend>
+            <i class="fas fa-layer-group"></i>
+            {{this.label}} (DC {{this.dc}})
+            {{#if this.isOptional}}<span class="mkc-optional-badge">{{localize "MKC.Settings.Optional"}}</span>{{/if}}
+        </legend>
+        
+        <div class="mkc-info-grid">
+            {{#each this.infoTypes}}
+            <label class="mkc-info-checkbox">
+                <input type="checkbox" 
+                       name="{{../id}}-{{this.key}}" 
+                       {{#if this.checked}}checked{{/if}}>
+                <span>{{this.label}}</span>
+            </label>
+            {{/each}}
+        </div>
+    </fieldset>
+    {{/each}}
+</div>

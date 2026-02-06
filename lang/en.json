@@ -1,0 +1,137 @@
+{
+  "MKC": {
+    "TokenControl": {
+      "Title": "Momo's Guide to Monsters"
+    },
+    "Tier": {
+      "I": "Tier I",
+      "II": "Tier II",
+      "III": "Tier III",
+      "IV": "Tier IV",
+      "V": "Tier V"
+    },
+    "InfoType": {
+      "Resistances": "Damage Resistances & Immunities",
+      "ConditionImmunities": "Condition Immunities",
+      "HighestStat": "Highest Ability Score",
+      "LowestStat": "Lowest Ability Score",
+      "AC": "Armor Class",
+      "HP": "Hit Points",
+      "Speed": "Movement Speed",
+      "Senses": "Senses",
+      "Languages": "Languages",
+      "CR": "Challenge Rating",
+      "CreatureType": "Creature Type",
+      "AllStats": "All Ability Scores",
+      "AllSaves": "All Saving Throws",
+      "LegendaryActions": "Legendary Actions",
+      "LegendaryResistances": "Legendary Resistances"
+    },
+    "Warnings": {
+      "NoTokenTargeted": "Please target a monster token first (use T key or right-click).",
+      "MultipleTokensTargeted": "Please target only one token.",
+      "NoActorOnToken": "The selected token has no associated actor.",
+      "NotAnNPC": "Knowledge checks can only be made on NPCs/monsters.",
+      "NoPlayerCharacter": "You need a player character to make a knowledge check.",
+      "GMOnly": "Only the GM can add entries to the bestiary."
+    },
+    "Errors": {
+      "MonsterNotFound": "Could not find the monster actor.",
+      "NoKnowledgeData": "No knowledge data found in this message."
+    },
+    "Dialog": {
+      "Title": "Momo's Guide to Monsters",
+      "TitleWithMonster": "Knowledge Check: {name}",
+      "Monster": "Monster",
+      "Character": "Character",
+      "SelectSkill": "Knowledge Skill",
+      "Advantage": "Roll with Advantage",
+      "DCModifier": "DC Modifier",
+      "DCModifierHint": "Positive = harder, negative = easier.",
+      "Roll": "Roll Knowledge Check",
+      "BackgroundKnowledge": "Background Knowledge",
+      "BackgroundKnowledgeNone": "— Roll Normally —",
+      "BackgroundKnowledgeHint": "Select a tier if the character already knows this information."
+    },
+    "Chat": {
+      "Title": "Momo's Guide to Monsters",
+      "TriedToRecall": "tried to recall information about",
+      "AutomaticallyRecalled": "recalled information about",
+      "Using": "using",
+      "WithAdvantage": "with Advantage",
+      "RollResult": "Roll",
+      "DCModifier": "DC Modifier",
+      "BackgroundKnowledge": "Background Knowledge",
+      "KnowledgeGained": "Knowledge Gained",
+      "DamageTraits": "Damage Traits",
+      "DamageVulnerabilities": "Damage Vulnerabilities",
+      "DamageResistances": "Damage Resistances",
+      "DamageImmunities": "Damage Immunities",
+      "NoDamageTraits": "No special damage traits",
+      "NoConditionImmunities": "None",
+      "HighestStat": "Highest Stat",
+      "LowestStat": "Lowest Stat",
+      "Save": "Save",
+      "NoKnowledge": "You failed to recall any useful information about this creature.",
+      "AddToBestiary": "Add to Bestiary"
+    },
+    "Journal": {
+      "BestiaryName": "Momo's Bestiary",
+      "LastUpdated": "Last updated: {date}",
+      "Created": "Added {name} to Momo's Bestiary",
+      "Updated": "Updated {name} in Momo's Bestiary",
+      "PageAdded": "Added {name} to Momo's Bestiary"
+    },
+    "Settings": {
+      "Saved": "Tier configuration saved.",
+      "Optional": "Optional",
+      "DCTier1": {
+        "Name": "DC: Tier I",
+        "Hint": "The DC required to unlock Tier I knowledge."
+      },
+      "DCTier2": {
+        "Name": "DC: Tier II",
+        "Hint": "The DC required to unlock Tier II knowledge."
+      },
+      "DCTier3": {
+        "Name": "DC: Tier III",
+        "Hint": "The DC required to unlock Tier III knowledge."
+      },
+      "DCTier4": {
+        "Name": "DC: Tier IV",
+        "Hint": "The DC required to unlock Tier IV knowledge."
+      },
+      "DCTier5": {
+        "Name": "DC: Tier V",
+        "Hint": "The DC required to unlock Tier V knowledge. Only active if info is configured."
+      },
+      "InfoTier1": {
+        "Name": "Tier I Info",
+        "Hint": "Information revealed at Tier I."
+      },
+      "InfoTier2": {
+        "Name": "Tier II Info",
+        "Hint": "Information revealed at Tier II."
+      },
+      "InfoTier3": {
+        "Name": "Tier III Info",
+        "Hint": "Information revealed at Tier III."
+      },
+      "InfoTier4": {
+        "Name": "Tier IV Info",
+        "Hint": "Information revealed at Tier IV."
+      },
+      "InfoTier5": {
+        "Name": "Tier V Info",
+        "Hint": "Information revealed at Tier V (optional tier)."
+      },
+      "TierConfig": {
+        "Name": "Configure Tier Knowledge",
+        "Label": "Configure Tiers",
+        "Hint": "Configure what information is revealed at each tier.",
+        "Title": "Tier Knowledge Configuration",
+        "Description": "Select which information is revealed when a player meets each tier's DC. The DC values are set above. Tier V is optional and won't appear unless configured."
+      }
+    }
+  }
+}
